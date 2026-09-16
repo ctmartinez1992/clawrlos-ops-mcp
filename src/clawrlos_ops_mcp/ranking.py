@@ -25,8 +25,8 @@ def _recency_factor(fetched_at: str | None, now: datetime) -> float:
 def rank(items: list[dict], now: datetime | None = None) -> list[dict]:
     """Rank cached news rows across sources.
 
-    Scores aren't comparable across sources (HN points vs. reddit upvotes
-    vs. GitHub stars vs. HF trendingScore vs. lobsters score), so each
+    Scores aren't comparable across sources (HN points vs. HF trendingScore
+    vs. lobsters score), so each
     source's scores are min-max normalized to 0..1 before combining with
     a recency decay. A soft per-source cap keeps any single source from
     flooding the result.

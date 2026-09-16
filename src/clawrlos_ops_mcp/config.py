@@ -10,7 +10,6 @@ class Settings(BaseSettings):
     refresh_interval_hours: float = 6
     retention_hours: int = 48
     hn_top_n: int = 60
-    reddit_limit: int = 25
     user_agent: str = "clawrlos-ops-mcp/0.1"
     github_token: str | None = None
     log_level: str = "INFO"

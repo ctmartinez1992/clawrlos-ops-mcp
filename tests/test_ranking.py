@@ -41,13 +41,13 @@ def test_rank_caps_items_per_source():
 def test_rank_normalizes_across_different_scales():
     items = [
         _item("hackernews", 500),
-        _item("github_trending", 50000),
+        _item("huggingface", 50000),
         _item("lobsters", 20),
     ]
     ranked = rank(items)
     # all three should be near the top since each is the max within its own source
     top_sources = {i["source"] for i in ranked[:3]}
-    assert top_sources == {"hackernews", "github_trending", "lobsters"}
+    assert top_sources == {"hackernews", "huggingface", "lobsters"}
 
 
 def test_rank_handles_empty_list():

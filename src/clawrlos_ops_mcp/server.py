@@ -62,7 +62,7 @@ async def get_top_picks(n: int = 10, ctx: Context = None) -> list[NewsItem]:
 async def get_trending_news(
     source: str | None = None, limit: int = 50, ctx: Context = None
 ) -> list[NewsItem]:
-    """All cached news, optionally filtered by source (e.g. reddit_claudeai, hackernews)."""
+    """All cached news, optionally filtered by source (e.g. hackernews, lobsters)."""
     db: SupabaseStore = ctx.request_context.lifespan_context.db
     rows = await db.fetch_recent(
         hours=settings.retention_hours, source=source, limit=limit

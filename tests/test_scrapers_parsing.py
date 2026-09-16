@@ -4,8 +4,7 @@ import httpx
 import pytest
 import respx
 
-from clawrlos_ops_mcp.scrapers import geeknews, github_trending, hackernews, huggingface, lobsters
-from clawrlos_ops_mcp.scrapers.reddit import fetch_subreddit
+from clawrlos_ops_mcp.scrapers import geeknews, hackernews, huggingface, lobsters
 
 FIXTURES = Path(__file__).parent / "fixtures"
 
@@ -35,50 +34,6 @@ async def test_hackernews_fetch_parses_stories():
     assert by_id["111"].title == "A cool AI project"
     assert by_id["111"].url == "https://example.com/cool-ai-project"
     assert by_id["222"].url == "https://news.ycombinator.com/item?id=222"
-
-
-@pytest.mark.asyncio
-@respx.mock
-async def test_reddit_fetch_subreddit_parses_and_truncates_selftext():
-    respx.get(url__regex=r"https://www\.reddit\.com/r/ClaudeAI/hot\.json.*").mock(
-        return_value=httpx.Response(200, text=_read("reddit_hot.json"))
-    )
-
-    async with httpx.AsyncClient() as client:
-        items = await fetch_subreddit(client, "ClaudeAI")
-
-    assert len(items) == 2
-    assert items[0].source == "reddit_claudeai"
-    assert items[0].external_id == "t3_abc123"
-    assert items[0].summary is None
-
-    long_post = next(i for i in items if i.external_id == "t3_def456")
-    assert long_post.summary is not None
-    assert len(long_post.summary) == 283  # 280 chars + "..."
-    assert long_post.summary.endswith("...")
-
-
-@pytest.mark.asyncio
-@respx.mock
-async def test_github_trending_parses_rows():
-    respx.get("https://github.com/trending").mock(
-        return_value=httpx.Response(200, text=_read("github_trending.html"))
-    )
-
-    async with httpx.AsyncClient() as client:
-        items = await github_trending.fetch(client)
-
-    assert len(items) == 2
-    first = items[0]
-    assert first.external_id == "alibaba/open-code-review"
-    assert first.url == "https://github.com/alibaba/open-code-review"
-    assert first.score == 30036
-    assert first.extra["language"] == "Go"
-    assert first.extra["stars_today"] == 2756
-
-    second = items[1]
-    assert second.external_id == "example-org/tiny-repo"
-    assert second.score == 12
 
 
 @pytest.mark.asyncio
