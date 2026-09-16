@@ -1,0 +1,9 @@
+{
+  "id": 111,
+  "type": "story",
+  "title": "A cool AI project",
+  "url": "https://example.com/cool-ai-project",
+  "score": 250,
+  "by": "alice",
+  "descendants": 42
+}

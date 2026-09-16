@@ -1,0 +1,12 @@
+[
+  {
+    "id": "example-org/cool-space",
+    "trendingScore": 42.5,
+    "likes": 100,
+    "cardData": {"title": "Cool Space Demo"}
+  },
+  {
+    "id": "another-org/tiny-space",
+    "likes": 3
+  }
+]

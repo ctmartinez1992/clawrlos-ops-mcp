@@ -1,0 +1,24 @@
+[
+  {
+    "short_id": "ab12cd",
+    "title": "An interesting programming post",
+    "url": "https://example.com/interesting-post",
+    "comments_url": "https://lobste.rs/s/ab12cd",
+    "description": "<p>Some <b>HTML</b> description.</p>",
+    "description_plain": "Some HTML description.",
+    "score": 33,
+    "comment_count": 7,
+    "submitter_user": "erin"
+  },
+  {
+    "short_id": "ef34gh",
+    "title": "A post with no description",
+    "url": "https://example.com/no-description",
+    "comments_url": "https://lobste.rs/s/ef34gh",
+    "description": "",
+    "description_plain": "",
+    "score": 10,
+    "comment_count": 1,
+    "submitter_user": "frank"
+  }
+]

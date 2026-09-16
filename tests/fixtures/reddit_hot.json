@@ -1,0 +1,32 @@
+{
+  "data": {
+    "children": [
+      {
+        "data": {
+          "name": "t3_abc123",
+          "title": "New MCP server for AI news",
+          "url": "https://external-example.com/news-mcp",
+          "permalink": "/r/ClaudeAI/comments/abc123/new_mcp_server/",
+          "selftext": "",
+          "score": 120,
+          "ups": 120,
+          "author": "carol",
+          "num_comments": 5
+        }
+      },
+      {
+        "data": {
+          "name": "t3_def456",
+          "title": "A self post with a long body",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/def456/a_self_post/",
+          "permalink": "/r/ClaudeAI/comments/def456/a_self_post/",
+          "selftext": "This is a very long self text body that should be truncated to two hundred and eighty characters because that is the summary length limit configured in the scraper and this sentence is long enough to definitely exceed that limit by quite a bit more padding padding padding padding.",
+          "score": 40,
+          "ups": 40,
+          "author": "dave",
+          "num_comments": 2
+        }
+      }
+    ]
+  }
+}

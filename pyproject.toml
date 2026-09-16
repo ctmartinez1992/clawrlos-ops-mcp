@@ -1,0 +1,33 @@
+[project]
+name = "clawrlos-ops-mcp"
+version = "0.1.0"
+description = "Local ai-news MCP server: scrapes 12 AI/tech news sources, caches to Supabase, exposes MCP tools over stdio."
+requires-python = ">=3.11"
+dependencies = [
+  "mcp[cli]>=1.30.0,<2",
+  "httpx>=0.28",
+  "beautifulsoup4>=4.12",
+  "lxml>=5.0",
+  "supabase>=2.9",
+  "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8",
+  "pytest-asyncio>=0.24",
+  "respx>=0.21",
+]
+
+[project.scripts]
+clawrlos-ops-mcp = "clawrlos_ops_mcp.server:main"
+
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/clawrlos_ops_mcp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
