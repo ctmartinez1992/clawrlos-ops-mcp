@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+<channel>
+	<title>AI News &amp; Artificial Intelligence | TechCrunch</title>
+	<link>https://techcrunch.com/category/artificial-intelligence/</link>
+	<description>Startup and Technology News</description>
+	<item>
+		<title>Example AI startup raises a big round</title>
+		<link>https://techcrunch.com/2026/09/16/example-ai-startup-raises-a-big-round/</link>
+		<dc:creator><![CDATA[Jane Reporter]]></dc:creator>
+		<pubDate>Wed, 16 Sep 2026 16:30:00 +0000</pubDate>
+		<category><![CDATA[AI]]></category>
+		<guid isPermaLink="false">https://techcrunch.com/?p=3164745</guid>
+		<description><![CDATA[A short teaser about the funding round.]]></description>
+	</item>
+	<item>
+		<title>Second example article with no description</title>
+		<link>https://techcrunch.com/2026/09/15/second-example-article/</link>
+		<dc:creator><![CDATA[John Writer]]></dc:creator>
+		<pubDate>Tue, 15 Sep 2026 12:00:00 +0000</pubDate>
+		<guid isPermaLink="false">https://techcrunch.com/?p=3164700</guid>
+		<description><![CDATA[]]></description>
+	</item>
+</channel>
+</rss>

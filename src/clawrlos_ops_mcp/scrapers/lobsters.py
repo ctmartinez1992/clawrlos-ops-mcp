@@ -4,22 +4,11 @@ import httpx
 
 from ..models import NewsItem
 from .base import get_with_retry
+from .text_utils import clean_summary
 
 log = logging.getLogger(__name__)
 
 HOTTEST_URL = "https://lobste.rs/hottest.json"
-SUMMARY_MAX_LEN = 280
-
-
-def _clean_summary(text: str | None) -> str | None:
-    if not text:
-        return None
-    cleaned = " ".join(text.split())
-    if not cleaned:
-        return None
-    if len(cleaned) > SUMMARY_MAX_LEN:
-        return cleaned[:SUMMARY_MAX_LEN] + "..."
-    return cleaned
 
 
 async def fetch(client: httpx.AsyncClient) -> list[NewsItem]:
@@ -43,7 +32,7 @@ async def fetch(client: httpx.AsyncClient) -> list[NewsItem]:
                 external_id=short_id,
                 title=story.get("title", ""),
                 url=story.get("url") or story.get("comments_url"),
-                summary=_clean_summary(story.get("description_plain")),
+                summary=clean_summary(story.get("description_plain")),
                 score=story.get("score"),
                 author=author if isinstance(author, str) else None,
                 extra={"comment_count": story.get("comment_count", 0)},

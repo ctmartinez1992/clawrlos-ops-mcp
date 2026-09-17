@@ -1,0 +1,26 @@
+[
+  {
+    "id": 4669106,
+    "title": "Build real-time voice apps with a cool AI model",
+    "description": "A walkthrough of building real-time voice applications.",
+    "url": "https://dev.to/exampleuser/build-real-time-voice-apps-4nb5",
+    "public_reactions_count": 42,
+    "comments_count": 3,
+    "tag_list": ["ai", "machinelearning"],
+    "user": {
+      "username": "exampleuser"
+    }
+  },
+  {
+    "id": 4669200,
+    "title": "A post with no description",
+    "description": "",
+    "url": "https://dev.to/otheruser/a-post-with-no-description-1a2b",
+    "public_reactions_count": 5,
+    "comments_count": 0,
+    "tag_list": ["ai"],
+    "user": {
+      "username": "otheruser"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <title>ArXiv Query Results</title>
+  <entry>
+    <id>http://arxiv.org/abs/2609.17527v1</id>
+    <title>Agentic Societies Need a Social Harness</title>
+    <updated>2026-09-15T17:57:27Z</updated>
+    <published>2026-09-15T17:57:27Z</published>
+    <summary>An agentic society is a collection of AI agents that coordinate autonomously across trust boundaries.</summary>
+    <author><name>Tapan Chugh</name></author>
+    <author><name>Vidushi Singh</name></author>
+    <author><name>Krish Jain</name></author>
+    <author><name>Arvind Krishnamurthy</name></author>
+    <category term="cs.MA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2609.17600v2</id>
+    <title>A Second Example Paper Title</title>
+    <updated>2026-09-14T08:00:00Z</updated>
+    <published>2026-09-14T08:00:00Z</published>
+    <summary>A short abstract for the second paper.</summary>
+    <author><name>Solo Author</name></author>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>

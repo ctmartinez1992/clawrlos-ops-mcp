@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><feed
+	xmlns="http://www.w3.org/2005/Atom"
+	xmlns:thr="http://purl.org/syndication/thread/1.0"
+	xml:lang="en-US"
+	>
+	<title type="text">AI | The Verge</title>
+	<updated>2026-09-16T16:34:19+00:00</updated>
+	<link rel="alternate" type="text/html" href="https://www.theverge.com/ai-artificial-intelligence" />
+	<id>https://www.theverge.com/rss/ai-artificial-intelligence/index.xml</id>
+	<entry>
+		<author>
+			<name>Stevie Bonifield</name>
+		</author>
+		<title type="html"><![CDATA[Example AI feature ships today]]></title>
+		<link rel="alternate" type="text/html" href="https://www.theverge.com/ai-artificial-intelligence/996234/example-ai-feature-ships-today" />
+		<id>https://www.theverge.com/?p=996234</id>
+		<updated>2026-09-16T10:24:02-04:00</updated>
+		<published>2026-09-16T12:30:00-04:00</published>
+		<summary type="html"><![CDATA[A short summary of the new AI feature.]]></summary>
+		<content type="html"><![CDATA[<p>Full HTML body not used by the scraper.</p>]]></content>
+	</entry>
+	<entry>
+		<author>
+			<name>Alex Author</name>
+		</author>
+		<title type="html"><![CDATA[Second example entry]]></title>
+		<link rel="alternate" type="text/html" href="https://www.theverge.com/ai-artificial-intelligence/996300/second-example-entry" />
+		<id>https://www.theverge.com/?p=996300</id>
+		<updated>2026-09-15T09:00:00-04:00</updated>
+		<published>2026-09-15T09:00:00-04:00</published>
+		<summary type="html"><![CDATA[Another short summary.]]></summary>
+	</entry>
+</feed>

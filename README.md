@@ -1,6 +1,6 @@
 # clawrlos-ops-mcp
 
-A local, self-hosted clone of the `ai-news-mcp` concept — an MCP server that aggregates AI/tech news from 4 sources, caches it in Supabase, and exposes it to any MCP client (Claude Code, Claude Desktop, nanobot, etc.) over stdio.
+A local, self-hosted clone of the `ai-news-mcp` concept — an MCP server that aggregates AI/tech news from 8 sources, caches it in Supabase, and exposes it to any MCP client (Claude Code, Claude Desktop, nanobot, etc.) over stdio.
 
 Unlike the original hosted version, this one has **no LLM summarization or curation step** — it scrapes, caches, and ranks algorithmically. Refresh runs on a background schedule inside the server process itself (every 6 hours by default); there's no external cron.
 
@@ -16,12 +16,16 @@ Unlike the original hosted version, this one has **no LLM summarization or curat
 | `get_paper_brief(arxiv_id_or_url)` | Live arXiv lookup: title, authors, abstract, and a code link if mentioned. |
 | `check_cache()` | Cache status: last updated, total items, per-source breakdown. |
 
-## Sources (4)
+## Sources (8)
 
 - **HackerNews** — top stories JSON API
 - **HuggingFace Spaces Trending** — JSON API
 - **Lobsters** — JSON API
 - **GeekNews** — HTML scrape
+- **Dev.to** — official JSON API, articles tagged `ai`
+- **TechCrunch AI** — dedicated AI category RSS feed
+- **The Verge AI** — dedicated AI Atom feed
+- **arXiv (latest cs.AI papers)** — official Atom API, newest submissions (distinct from `get_paper_brief`, which looks up one specific paper on demand)
 
 This aggregator is scoped to news articles/posts — it intentionally does **not** scrape or store GitHub repos as feed items (an earlier GitHub Trending source was removed for this reason). `get_repo_quickstart` still exists as a separate, on-demand tool for looking up a specific repo mentioned in an article; it just isn't part of the stored feed.
 
@@ -95,6 +99,7 @@ Two real issues came up deploying this to a remote host — worth checking first
 | `REFRESH_INTERVAL_HOURS` | `6` | how often the background scraper runs |
 | `RETENTION_HOURS` | `48` | rows older than this are deleted each cycle |
 | `HN_TOP_N` | `60` | how many HackerNews top-story ids to fetch |
+| `ARXIV_MAX_RESULTS` | `20` | how many newest cs.AI papers to fetch per refresh |
 | `USER_AGENT` | `clawrlos-ops-mcp/0.1` | sent on all outbound scraper requests |
 | `GITHUB_TOKEN` | unset | optional; raises `get_repo_quickstart`'s GitHub API rate limit from 60/hr to 5000/hr |
 | `LOG_LEVEL` | `INFO` | all logging goes to stderr (stdout is the JSON-RPC channel) |
